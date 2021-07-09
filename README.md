@@ -1,6 +1,6 @@
 # 98-119 iPhone Development, Spring 2009
 
-This is the website for a course I taught on iPhone development at Carnegie Mellon University.
+This is the website for a course I taught on iPhone development at Carnegie Mellon University. Hosted here: https://oyamauchi.github.io/98-119/
 
 CMU has a program called "StuCo", in which students can design and teach a semester-long course. Students who take the course get credit, roughly 1/3 the amount of a normal course. The teacher also gets the same amount of credit. (At least, that was the case in 2009; it may have changed since then.)
 
