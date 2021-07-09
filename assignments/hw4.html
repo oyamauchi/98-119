@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>98-119: Homework 4</title>
+  <link rel="stylesheet" type="text/css" href="../styles.css" />
+</head>
+<body>
+<table border="0" align="center" width="720px" cellspacing="3">
+  <tr>
+    <td>
+      <p class="bigtitle">Homework 4</p>
+    </td>
+  </tr>
+  <tr><td>
+  <hr style="width: 100%; height: 1px; background-color: black; border: 0;"/>
+  </td></tr>
+  <tr>
+    <td>
+
+<table class="twocolumn" border="0" width="100%" cellspacing="0px" cellpadding="0">
+<tr>
+  <td class="heading" width="100px">Downloads</td>
+  <td>
+    <p>Finished TabWordList: <a href="../files/TabWordListDone.zip">here</a></p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Aim</td>
+  <td>
+    <p>This homework will get you more familiar with navigation controllers and tab
+      bar controllers.</p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Task</td>
+  <td>
+    <p>Make the following changes to TabWordList:</p>
+    <ul>
+      <li>Create a total of six tabs. Marvel at what happens.</li>
+      <li>Make a button (<code>UIButton</code>) in the DetailView UI that, when tapped,
+      slides back to the word list &mdash; as if you&#8217;d tapped the back button in
+      the nav bar. Have a look at <code>UINavigationController</code> for this.</li>
+      <li>Change the back button that appears when you drill down into a DetailView to
+      show the short title (like &#8220;Two&#8221;) instead of the long default title (like &#8220;Increment
+      by two&#8221;). This takes three statements in code, but they are a bit hard to
+      understand. See the hints below.</li>
+    </ul>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Hints</td>
+  <td>
+    <p>Eventually I&#8217;ll stop bothering to say this: use the documentation.</p>
+    <p>There is one change you have to make in each of the three classes in the
+    project.</p>
+    <p>The third task is a little tricky. As we saw, each view controller has a navigation
+    item associated with it that holds information about what appears in the navigation
+    bar when that view controller is visible. The navigation item has a property called
+    <code>backBarButtonItem</code> which represents the back button for the <em>next</em>
+    view controller &mdash; that is, the back button that is visible when you&#8217;re
+    drilled-down from this one by one level. You&#8217;ll have to create a new
+    <code>UIBarButtonItem</code> with the right title (and <code>nil</code> for the target
+    and action, and <code>UIBarButtonItemStyleBordered</code> as the style) and set it as
+    <code>backBarButtonItem</code>. (Where? You figure that out.)</p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Due</td>
+  <td><p>Tuesday February 17, at the beginning of class (6:30PM)</p></td>
+</tr>
+<tr>
+  <td class="heading">Submission</td>
+  <td>
+    <p>LabFusion
+      (delete the build directory and zip the project directory)</p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Solution</td>
+  <td>
+    <p><a href="../files/hw4-solved.zip">Here</a></p>
+  </td>
+</tr>
+</table>
+<p><a href="../index.html">Back to the main page</a></p>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

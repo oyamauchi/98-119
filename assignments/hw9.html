@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>98-119: Homework 9</title>
+  <link rel="stylesheet" type="text/css" href="../styles.css" />
+</head>
+<body>
+<table border="0" align="center" width="720px" cellspacing="3">
+  <tr>
+    <td>
+      <p class="bigtitle">Homework 9</p>
+    </td>
+  </tr>
+  <tr><td>
+  <hr style="width: 100%; height: 1px; background-color: black; border: 0;"/>
+  </td></tr>
+  <tr>
+    <td>
+
+<table class="twocolumn" border="0" width="100%" cellspacing="0px" cellpadding="0">
+<tr>
+  <td class="heading" width="100px">Downloads</td>
+  <td>
+    <p><a href="../files/BallDone.zip">BallDone</a></p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Aim</td>
+  <td>
+    <p>This homework will get you to work with the accelerometer API and think about
+    processing accelerometer data.</p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Task</td>
+  <td>
+    <p>Modify Ball so that the ball isn't affected by accelerometer events until the
+      user has shaken the device. That is, initially, nothing happens to the ball if
+      you tilt the device, but once you shake it, the ball starts rolling around
+      under the influence of gravity. So basically, "shake to start".</p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Hints</td>
+  <td>
+    <p>This homework is a little more challenging than usual.</p>
+    <p>Get Apple's <a href="https://developer.apple.com/iphone/library/samplecode/AccelerometerGraph/index.html">AccelerometerGraph</a>
+      (requires login) sample code and use it to observe what happens
+      when the device is shaken. Use this information to figure out a good "shake"
+      criterion.</p>
+    <p>For a case like this, it's best to use a high-pass filter to eliminate the
+      influence of gravity. AccelerometerGraph implements a high-pass filter.</p>
+  </td>
+</tr>
+<tr>
+  <td class="heading">Due</td>
+  <td><p>Tuesday April 7, at 6:30PM</p></td>
+</tr>
+<tr>
+  <td class="heading">Submission</td>
+  <td>
+    <p>LabFusion
+      (delete the build directory and zip the project directory)</p>
+  </td>
+</tr>
+</table>
+<p><a href="../index.html">Back to the main page</a></p>
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

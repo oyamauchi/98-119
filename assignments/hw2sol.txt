@@ -1,0 +1,51 @@
+0)  You must release or autorelease an object if and only if you got it from
+    alloc or copy, or you retained it.
+
+1)  C is wrong because it releases the old before retaining the new. If the
+    new and old are the same object, and it has a retain count of 1, you
+    will end up calling a method on a deallocated object, which should
+    cause a crash.
+
+2)  obj should be released after adding it to the array, otherwise it gets
+    leaked. (If you're wondering how it's OK to release an object that you've
+    just added to an array, it's because the array retains it.)
+    
+    Saying that result should be released is incorrect: [NSMutableArray array]
+    returns an autoreleased object, as you should expect.
+
+3)  When the instance variable is of a primitive type (int, float, double,
+    pointer to a primitive, anything that's not an object). As seen in
+    question 5, there are other cases where "assign" is appropriate too.
+
+4)  + (id)widgetWithName:(NSString *)aName {
+      return [[[Widget alloc] initWithName:aName] autorelease];
+    }
+    
+    An interesting trick is to use "self" instead of "Widget":
+    
+    + (id)widgetWithName:(NSString *)aName {
+      return [[[self alloc] initWithName:aName] autorelease];
+    }
+    
+    Inside an instance method, "self" is a pointer to the instance the method
+    was called on, but inside a class method, "self" is equivalent to the name
+    of the class.
+
+5)  This creates a retain cycle. Even if the tree isn't malformed (a node being
+    its own child or whatever) you still have two objects (a parent and left
+    child) retaining each other. This means that neither will ever be freed:
+    neither's retain count will reach zero, because A won't release B until A
+    gets deallocated, but A won't get deallocated until B releases it, and so
+    on. This is a case where an object can be "leaked" even though some other
+    object has a pointer to it.
+
+6)  +stringWithFormat: is returning an autoreleased string. Because the
+    autorelease pool only gets drained at the end of the event loop, a billion
+    strings will have piled up in it by the time it gets drained, which if you
+    think about it is quite a lot (1 GB ~ a billion bytes). On a 32-bit machine
+    this will cause you to run out of memory, and certainly on the iPhone you'll
+    be killed by the system well before the outer loop finishes.
+    
+    You might have thought about simply doing NSLog(logString) [don't do this!]
+    or using NSLog to do the formatting instead of +stringWithFormat:. Well,
+    NSLog calls +stringWithFormat: internally.
